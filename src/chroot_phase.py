@@ -290,7 +290,8 @@ def _enable_boot_essential_config(src):
                 "CONFIG_BTRFS_FS_LZO",
                 "CONFIG_BTRFS_FS_ZLIB",
             ])
-    as_builtin = {"CONFIG_EFI", "CONFIG_EFIVAR_FS"}
+    as_builtin = {"CONFIG_EFI", "CONFIG_EFIVAR_FS", # kill error "CONFIG_FB",
+                 "CONFIG_FRAMEBUFFER_CONSOLE", "CONFIG_FB_EFI", "CONFIG_FB_SIMPLE", "CONFIG_VESA", "CONFIG_DRM", "CONFIG_DRM_FBDEV_EMULATION",}
 
     cfg = os.path.join(src, "scripts", "config")
     if not os.path.isfile(cfg):
