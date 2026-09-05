@@ -308,7 +308,7 @@ def _enable_boot_essential_config(src):
 
 def chroot_kernel():
     banner("Chroot: kernel - sources, config, build, initramfs")
-    run("emerge sys-kernel/gentoo-sources sys-kernel/linux-firmware sys-kernel/dracut",
+    run("emerge sys-kernel/gentoo-sources sys-kernel/linux-firmware sys-kernel/dracut sys-kernel/installkernel",
         check=False)
     run("eselect kernel list", check=False)
     run("eselect kernel set 1", check=False)
