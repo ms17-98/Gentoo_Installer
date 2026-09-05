@@ -47,7 +47,7 @@ python3 tests/test_basic.py
 
 # Build a single-file executable with PyInstaller
 # (pinned spec in the repo — no flags to remember)
-pyinstaller gentoo-installer.spec
+pyinstaller --onefile --add-data 'src/*.py:src' src/main.py
 # result: dist/gentoo-installer(.exe)
 ```
 
